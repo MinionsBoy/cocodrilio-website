@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom embroidery on clothes, individual designs, and coming soon: 3D printing & retro computer club!">
+    <title>COCODRILIO | Embroidery & Geek Stuff</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="config/config.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        pixel: ['"Press Start 2P"', 'cursive'],
+                    },
+                    colors: {
+                        neon: {
+                            cyan: '#00e5ff',
+                            pink: '#ff00ff',
+                            green: '#00ff88',
+                        },
+                        dark: {
+                            bg: '#0a0a0f',
+                            card: '#12121a',
+                        }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1a1a2e 1px, transparent 1px), linear-gradient(to bottom, #1a1a2e 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark-bg/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img data-src="logo" alt="COCODRILIO Logo" class="h-10 w-10 md:h-12 md:w-12 rounded-lg logo-glow">
+                    <a href="#" class="font-pixel text-lg md:text-xl text-neon-cyan hover:text-white transition-colors duration-300 hidden sm:block">COCODRILIO</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-neon-cyan px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_about">About</a>
+                        <a href="#services" class="hover:text-neon-green px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_services">Services</a>
+                        <a href="#contact" class="bg-gradient-to-r from-neon-pink to-neon-orange hover:from-pink-600 hover:to-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-all shadow-[0_0_15px_rgba(255,0,255,0.5)] hover:shadow-[0_0_25px_rgba(255,0,255,0.8)]" data-i18n="nav_contact">Contact Us</a>
+                    </div>
+                    <!-- Language Switcher -->
+                    <div class="flex space-x-2 border-l border-white/20 pl-4">
+                        <button onclick="setLanguage('en')" class="lang-btn active px-2 py-1 text-xs font-bold rounded border border-white/20 hover:border-neon-cyan transition-all" id="btn-en">EN</button>
+                        <button onclick="setLanguage('pl')" class="lang-btn px-2 py-1 text-xs font-bold rounded border border-white/20 hover:border-neon-cyan transition-all" id="btn-pl">PL</button>
+                        <button onclick="setLanguage('ua')" class="lang-btn px-2 py-1 text-xs font-bold rounded border border-white/20 hover:border-neon-cyan transition-all" id="btn-ua">UA</button>
+                    </div>
+                </div>
+
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-dark-card" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" data-i18n="nav_about">About</a>
+                <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" data-i18n="nav_services">Services</a>
+                <a href="#contact" class="text-neon-pink hover:text-white block px-3 py-2 rounded-md text-base font-medium" data-i18n="nav_contact">Contact</a>
+                <div class="flex space-x-4 px-3 py-4 border-t border-white/10 mt-2">
+                    <button onclick="setLanguage('en')" class="text-xs font-bold text-gray-400 hover:text-white">EN</button>
+                    <button onclick="setLanguage('pl')" class="text-xs font-bold text-gray-400 hover:text-white">PL</button>
+                    <button onclick="setLanguage('ua')" class="text-xs font-bold text-gray-400 hover:text-white">UA</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-grid-pattern bg-grid opacity-20"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
+            <!-- Logo Display -->
+            <div class="mb-8 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-neon-cyan via-neon-pink to-neon-green rounded-full opacity-30 blur-2xl animate-pulse"></div>
+                    <img data-src="logo" alt="COCODRILIO Logo" class="relative w-56 h-56 md:w-80 md:h-80 rounded-2xl logo-glow border-2 border-white/10">
+                </div>
+            </div>
+
+            <div class="mb-6 inline-block">
+                <span class="bg-gradient-to-r from-neon-cyan/20 to-neon-pink/20 text-neon-green border border-neon-green/50 px-4 py-2 rounded-full text-xs font-pixel tracking-wider">
+                    ✨ <span data-i18n="hero_est">EST.</span> <span data-content="established"></span> ✨
+                </span>
+            </div>
+            
+            <h1 class="text-3xl md:text-6xl lg:text-7xl font-pixel text-white mb-6 leading-tight">
+                <span data-i18n="hero_welcome">WELCOME TO</span><br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-pink to-neon-green neon-text-cyan">COCODRILIO</span>
+            </h1>
+            
+            <p class="text-sm md:text-xl text-gray-400 mb-4 max-w-2xl mx-auto font-light flex flex-wrap justify-center gap-2">
+                <span class="text-neon-orange font-semibold" data-i18n="hero_tag_1">EMBROIDERY</span> • 
+                <span class="text-neon-green font-semibold" data-i18n="hero_tag_2">3D PRINTING</span> • 
+                <span class="text-neon-pink font-semibold" data-i18n="hero_tag_3">GEEK STUFF</span> • 
+                <span class="text-neon-cyan font-semibold" data-i18n="hero_tag_4">COMPUTER CLUB</span>
+            </p>
+            
+            <p class="text-sm md:text-md text-gray-500 mb-10 max-w-xl mx-auto" data-content="description">
+                Custom embroidery on clothes, individual designs, and coming soon: 3D printing & retro computer club!
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#services" class="px-8 py-4 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-bg font-bold font-pixel text-sm rounded-lg hover:from-cyan-400 hover:to-green-400 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.5)]" data-i18n="btn_explore">
+                    EXPLORE SERVICES
+                </a>
+                <a href="#contact" class="px-8 py-4 border-2 border-neon-pink text-neon-pink font-bold font-pixel text-sm rounded-lg hover:bg-neon-pink hover:text-white transition-all shadow-[0_0_15px_rgba(255,0,255,0.3)] hover:shadow-[0_0_25px_rgba(255,0,255,0.6)]" data-i18n="btn_contact">
+                    GET IN TOUCH
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-neon-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dark-card border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-2xl md:text-4xl font-pixel text-white mb-4">
+                        <span data-i18n="about_title_1">WE ARE</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-pink neon-text-pink">COCODRILIO</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg leading-relaxed" data-i18n="about_p1">
+                        Born from a love of retro aesthetics and modern technology, Cocodrilio is a creative hub for geeks, makers, and gamers.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed" data-i18n="about_p2">
+                        We specialize in high-quality custom embroidery, turning your favorite pixel art, logos, and designs into wearable art. We're building a future that includes cutting-edge 3D printing and a nostalgic old-school computer club.
+                    </p>
+                    <div class="flex gap-6 pt-4 flex-wrap">
+                        <div class="text-center p-4 bg-dark-bg rounded-lg border border-neon-cyan/30 min-w-[100px]">
+                            <span class="block text-2xl font-bold text-neon-cyan">100%</span>
+                            <span class="text-xs text-gray-500 uppercase" data-i18n="stat_custom">Custom</span>
+                        </div>
+                        <div class="text-center p-4 bg-dark-bg rounded-lg border border-neon-pink/30 min-w-[100px]">
+                            <span class="block text-2xl font-bold text-neon-pink" data-i18n="stat_retro">Retro</span>
+                            <span class="text-xs text-gray-500 uppercase" data-i18n="stat_vibe">Vibe</span>
+                        </div>
+                        <div class="text-center p-4 bg-dark-bg rounded-lg border border-neon-green/30 min-w-[100px]">
+                            <span class="block text-2xl font-bold text-neon-green" data-i18n="stat_future">Future</span>
+                            <span class="text-xs text-gray-500 uppercase" data-i18n="stat_tech">Tech</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-neon-cyan via-neon-pink to-neon-orange rounded-lg opacity-20 blur-xl"></div>
+                    <div class="relative bg-dark-bg p-4 rounded-xl border border-white/10">
+                        <div class="aspect-square bg-gradient-to-br from-gray-800 to-black rounded-lg flex items-center justify-center overflow-hidden relative">
+                            <div class="absolute inset-0 bg-[url('images/cbm.avif')] bg-cover bg-center opacity-40"></div>
+                            <div class="relative z-10 text-center">
+                                <span class="font-pixel text-3xl md:text-4xl text-white drop-shadow-lg">8-BIT</span>
+                                <br>
+                                <span class="font-pixel text-3xl md:text-4xl text-neon-green drop-shadow-lg">SOUL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-pixel text-white mb-4"><span data-i18n="services_title_1">OUR</span> <span class="text-neon-cyan" data-i18n="services_title_2">SERVICES</span></h2>
+                <p class="text-gray-400" data-i18n="services_subtitle">From thread to plastic to pixels.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: Embroidery -->
+                <div class="group relative bg-dark-card rounded-xl overflow-hidden border border-white/10 glow-card transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img data-src="embroidery" alt="Embroidery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-white" data-i18n="serv_1_title">Custom Embroidery</h3>
+                            <span class="bg-neon-green/20 text-neon-green text-xs px-2 py-1 rounded border border-neon-green/50" data-i18n="status_active">ACTIVE</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4" data-i18n="serv_1_desc">
+                            High-quality embroidery on clothes, hats, and bags. Send us your pixel art or vector designs, and we'll stitch them with precision.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-neon-cyan rounded-full mr-2"></span><span data-i18n="serv_1_li1">Custom Logos</span></li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-neon-cyan rounded-full mr-2"></span><span data-i18n="serv_1_li2">Individual Designs</span></li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-neon-cyan rounded-full mr-2"></span><span data-i18n="serv_1_li3">Patches & Badges</span></li>
+                        </ul>
+                        <a href="#contact" class="block w-full text-center py-2 border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-dark-bg font-bold rounded transition-colors" data-i18n="btn_order">ORDER NOW</a>
+                    </div>
+                </div>
+
+                <!-- Service 2: 3D Printing -->
+                <div class="group relative bg-dark-card rounded-xl overflow-hidden border border-white/10 glow-card transition-all duration-300 opacity-75 hover:opacity-100">
+                    <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur text-neon-yellow text-xs font-pixel px-3 py-1 rounded border border-neon-yellow/50" data-i18n="status_soon">COMING SOON</div>
+                    <div class="h-48 overflow-hidden">
+                        <img data-src="printing3d" alt="3D Printing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4" data-i18n="serv_2_title">3D Printing</h3>
+                        <p class="text-gray-400 text-sm mb-4" data-i18n="serv_2_desc">
+                            Bringing your digital models to life. We are setting up our farm to print figurines, cosplay props, and replacement parts.
+                        </p>
+                        <div class="w-full bg-gray-800 rounded-full h-2.5 mb-6">
+                            <div class="bg-neon-pink h-2.5 rounded-full" style="width: 45%"></div>
+                        </div>
+                        <p class="text-xs text-center text-gray-500" data-i18n="serv_2_progress">Lab Setup in Progress...</p>
+                    </div>
+                </div>
+
+                <!-- Service 3: Computer Club -->
+                <div class="group relative bg-dark-card rounded-xl overflow-hidden border border-white/10 glow-card transition-all duration-300 opacity-75 hover:opacity-100">
+                    <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur text-neon-yellow text-xs font-pixel px-3 py-1 rounded border border-neon-yellow/50" data-i18n="status_planned">PLANNED</div>
+                    <div class="h-48 overflow-hidden">
+                        <img data-src="computerClub" alt="Computer Club" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-4" data-i18n="serv_3_title">Retro Computer Club</h3>
+                        <p class="text-gray-400 text-sm mb-4" data-i18n="serv_3_desc">
+                            A sanctuary for old-school gaming. CRT monitors, mechanical keyboards, and classic arcade cabinets. Join the LAN party of the future.
+                        </p>
+                        <div class="flex items-center justify-center py-4">
+                            <span class="animate-pulse text-neon-cyan font-pixel text-xs" data-i18n="serv_3_date">Opening Date TBD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark-card border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-pixel text-white mb-4"><span data-i18n="contact_title_1">CONTACT</span> <span class="text-neon-pink" data-i18n="contact_title_2">US</span></h2>
+                <p class="text-gray-400" data-i18n="contact_subtitle">Ready to start your project? Drop us a line.</p>
+            </div>
+
+            <div class="bg-black/40 p-8 rounded-2xl border border-white/10 shadow-2xl">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-400 mb-2" data-i18n="form_name">Name</label>
+                            <input type="text" id="name" class="w-full bg-dark-bg border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="Player One">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-400 mb-2" data-i18n="form_email">Email</label>
+                            <input type="email" id="email" class="w-full bg-dark-bg border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="email@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="service" class="block text-sm font-medium text-gray-400 mb-2" data-i18n="form_service">Service Interest</label>
+                        <select id="service" class="w-full bg-dark-bg border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors">
+                            <option data-i18n="opt_embroidery">Custom Embroidery</option>
+                            <option data-i18n="opt_3d">3D Printing (Waitlist)</option>
+                            <option data-i18n="opt_club">Computer Club (Waitlist)</option>
+                            <option data-i18n="opt_other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-400 mb-2" data-i18n="form_message">Message</label>
+                        <textarea id="message" rows="4" class="w-full bg-dark-bg border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="Tell us about your design idea..."></textarea>
+                    </div>
+                    <button type="button" class="w-full bg-gradient-to-r from-neon-cyan to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.4)] hover:shadow-[0_0_25px_rgba(0,243,255,0.6)] transition-all transform hover:-translate-y-1 font-pixel text-sm" data-i18n="btn_send">
+                        SEND MESSAGE
+                    </button>
+                </form>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="p-4">
+                    <h4 class="text-neon-green font-bold mb-2" data-i18n="footer_email">Email</h4>
+                    <p class="text-gray-400" data-content="email">hello@cocodrilio.com</p>
+                </div>
+                <div class="p-4">
+                    <h4 class="text-neon-pink font-bold mb-2" data-i18n="footer_location">Location</h4>
+                    <p class="text-gray-400" data-content="location">Cyber City, Sector 7</p>
+                </div>
+                <div class="p-4">
+                    <h4 class="text-neon-cyan font-bold mb-2" data-i18n="footer_socials">Socials</h4>
+                    <div class="flex justify-center space-x-4">
+                        <a data-social="instagram" href="#" class="text-gray-400 hover:text-white">IG</a>
+                        <a data-social="facebook" href="#" class="text-gray-400 hover:text-white">FB</a>
+                        <a data-social="twitter" href="#" class="text-gray-400 hover:text-white">TT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-600 text-sm font-pixel" data-content="copyright">© 2024 COCODRILIO.</p>
+            <p class="text-gray-700 text-xs mt-2"><span data-i18n="footer_made">Made with</span> 💖 <span data-i18n="footer_and">and</span> ⚡</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

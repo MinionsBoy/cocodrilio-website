@@ -1,0 +1,64 @@
+/* styles.css - Custom styles for COCODRILIO website */
+
+body {
+    background-color: #0a0a0f;
+    color: #e2e8f0;
+}
+
+.neon-text-cyan {
+    text-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+}
+
+.neon-text-pink {
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.neon-text-green {
+    text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88, 0 0 20px #00ff88;
+}
+
+.neon-text-orange {
+    text-shadow: 0 0 5px #ff9500, 0 0 10px #ff9500, 0 0 20px #ff9500;
+}
+
+.neon-border-cyan {
+    box-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff, inset 0 0 5px #00e5ff;
+}
+
+.glow-card:hover {
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+.bg-grid {
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 5%, black 40%, black 70%, transparent 95%);
+}
+
+.logo-glow {
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.5)) drop-shadow(0 0 40px rgba(255, 0, 255, 0.3));
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #12121a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00e5ff;
+}
+
+.lang-btn.active {
+    background-color: #00e5ff;
+    color: #0a0a0f;
+    box-shadow: 0 0 10px #00e5ff;
+}
