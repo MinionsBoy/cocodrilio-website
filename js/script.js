@@ -57,6 +57,34 @@ function initializeContent() {
         });
     }
 
+    // Set contact form action
+    const contactForm = document.querySelector('#contact form');
+    if (contactForm) {
+        // Initialize EmailJS (replace with your public key)
+        emailjs.init("wCxS1jjJM0fvtYAEa");
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            emailjs.send("service_ryr882u", "template_k52lz38", {
+                from_name: name,
+                from_email: email,
+                service: service,
+                message: message,
+                to_email: config.site.email
+            }).then(function(response) {
+                alert("Message sent successfully!");
+                contactForm.reset();
+            }, function(error) {
+                alert("Failed to send message: " + error.text);
+            });
+        });
+    }
+
     // Set copyright year
     const copyrightElements = document.querySelectorAll('[data-content="copyright"]');
     copyrightElements.forEach(el => {

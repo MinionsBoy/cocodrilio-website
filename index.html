@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="config/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -116,9 +117,7 @@
                 <span class="text-neon-cyan font-semibold" data-i18n="hero_tag_4">COMPUTER CLUB</span>
             </p>
             
-            <p class="text-sm md:text-md text-gray-500 mb-10 max-w-xl mx-auto" data-content="description">
-                Custom embroidery on clothes, individual designs, and coming soon: 3D printing & retro computer club!
-            </p>
+            <p class="text-sm md:text-md text-gray-500 mb-10 max-w-xl mx-auto" data-content="description"></p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#services" class="px-8 py-4 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-bg font-bold font-pixel text-sm rounded-lg hover:from-cyan-400 hover:to-green-400 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(0,229,255,0.5)]" data-i18n="btn_explore">
@@ -285,7 +284,7 @@
                         <label for="message" class="block text-sm font-medium text-gray-400 mb-2" data-i18n="form_message">Message</label>
                         <textarea id="message" rows="4" class="w-full bg-dark-bg border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="Tell us about your design idea..."></textarea>
                     </div>
-                    <button type="button" class="w-full bg-gradient-to-r from-neon-cyan to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.4)] hover:shadow-[0_0_25px_rgba(0,243,255,0.6)] transition-all transform hover:-translate-y-1 font-pixel text-sm" data-i18n="btn_send">
+                    <button type="submit" class="w-full bg-gradient-to-r from-neon-cyan to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.4)] hover:shadow-[0_0_25px_rgba(0,243,255,0.6)] transition-all transform hover:-translate-y-1 font-pixel text-sm" data-i18n="btn_send">
                         SEND MESSAGE
                     </button>
                 </form>
@@ -294,11 +293,11 @@
             <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div class="p-4">
                     <h4 class="text-neon-green font-bold mb-2" data-i18n="footer_email">Email</h4>
-                    <p class="text-gray-400" data-content="email">hello@cocodrilio.com</p>
+                    <p class="text-gray-400" data-content="email"></p>
                 </div>
                 <div class="p-4">
                     <h4 class="text-neon-pink font-bold mb-2" data-i18n="footer_location">Location</h4>
-                    <p class="text-gray-400" data-content="location">Cyber City, Sector 7</p>
+                    <p class="text-gray-400" data-content="location"></p>
                 </div>
                 <div class="p-4">
                     <h4 class="text-neon-cyan font-bold mb-2" data-i18n="footer_socials">Socials</h4>
@@ -315,7 +314,7 @@
     <!-- Footer -->
     <footer class="bg-black py-8 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-600 text-sm font-pixel" data-content="copyright">© 2024 COCODRILIO.</p>
+            <p class="text-gray-600 text-sm font-pixel" data-content="copyright"></p>
             <p class="text-gray-700 text-xs mt-2"><span data-i18n="footer_made">Made with</span> 💖 <span data-i18n="footer_and">and</span> ⚡</p>
         </div>
     </footer>
