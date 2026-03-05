@@ -5,7 +5,7 @@ const config = {
         title: "COCODRILIO | Embroidery & Geek Stuff",
         description: "Custom embroidery on clothes, individual designs, and coming soon: 3D printing & retro computer club!",
         established: "2026",
-        email: "hello@cocodrilio.com",
+        email: "venom.nfs.ru@gmail.com",
         location: "Wroclaw, Poland",
         socials: {
             instagram: "#",
