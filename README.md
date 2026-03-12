@@ -66,19 +66,20 @@ site: {
 ```
 
 ### Images
-Replace files in the `imeges/` folder and update paths in config:
+Replace files in the `images/` folder and update paths in config:
 ```javascript
 images: {
-    logo: "imeges/logo.png",
-    embroidery: "imeges/emb.png",
-    printing3d: "imeges/3d.png",
-    computerClub: "imeges/arcade.png"
+    logo: "images/logo.png",
+    embroidery: "images/emb.png",
+    printing3d: "images/3d.png",
+    computerClub: "images/arcade.png"
 }
 ```
 
 ### Colors & Styling
 ```javascript
 colors: {
+
     neon: {
         cyan: '#00e5ff',
         pink: '#ff00ff',
@@ -89,6 +90,12 @@ colors: {
 
 ### Translations
 Add or modify translations in the `translations` object for EN, PL, and UA.
+
+## 🎨 Customization
+
+*New feature:* gallery images are now discovered automatically from the filesystem. See the section above for details on running the generator script.*
+
+> **Note:** the gallery is loaded via `fetch` from `config/gallery.json`, so you need to serve the site over HTTP (for example using `npx serve` or a simple Python/Node server) instead of opening `index.html` via the `file://` protocol.
 
 ## 🎨 Customization
 

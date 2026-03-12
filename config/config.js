@@ -14,6 +14,12 @@ const config = {
         }
     },
 
+    carousel_images: [
+        "att.e8i9SMbZvHi3GiG4Tg89_77tM5M-P3_7jJUyq8OjaII.JPEG",
+        "Gemini_Generated_Image_yc7ipmyc7ipmyc7i.png",
+        "IMG_0656.PNG"
+    ],
+
     colors: {
         neon: {
             cyan: '#00e5ff',
